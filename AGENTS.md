@@ -1,4 +1,4 @@
-# CLAUDE.md — AI Assistant Guide for TechnovationGirlsWebApps
+# AGENTS.md — AI Assistant Guide for TechnovationGirlsWebApps
 
 This file provides context for AI assistants working on this repository.
 
