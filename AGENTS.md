@@ -13,7 +13,7 @@ The curriculum is organized in **three progressive levels**:
 - **Nivel Intermedio** — HTML, CSS, forms, HTTP, and APIs (Guides 09–14)
 - **Nivel Avanzado** — Full web application development with FastAPI (Guides 15–19)
 
-**Repository type:** Documentation-only (Markdown guides). No runnable source code, no tests, no build system.
+**Repository type:** Documentation and interactive notebooks (Markdown guides + Jupyter Notebooks). No runnable source code, no tests, no build system.
 
 ---
 
@@ -22,7 +22,7 @@ The curriculum is organized in **three progressive levels**:
 ```
 TechnovationGirlsWebApps/
 ├── README.md                          # Project overview and learning path
-├── CLAUDE.md                          # This file
+├── AGENTS.md                          # This file
 ├── guias/                             # 19 sequential learning guides (3 levels)
 │   │
 │   │  — Nivel Basico (Guides 01–08) —
@@ -50,6 +50,16 @@ TechnovationGirlsWebApps/
 │   ├── 18_formularios_con_fastapi.md      # Processing HTML form data
 │   └── 19_proyecto_web_completo.md        # Full app: FastAPI + HTML + CSS
 │
+├── notebooks/                         # Interactive Jupyter Notebook versions (Nivel Basico)
+│   ├── 01_introduccion_a_python.ipynb     # Notebook version of Guide 01
+│   ├── 02_variables_y_tipos_de_datos.ipynb# Notebook version of Guide 02
+│   ├── 03_condicionales.ipynb             # Notebook version of Guide 03
+│   ├── 04_ciclos.ipynb                    # Notebook version of Guide 04
+│   ├── 05_funciones.ipynb                 # Notebook version of Guide 05
+│   ├── 06_listas_y_diccionarios.ipynb     # Notebook version of Guide 06
+│   ├── 07_entrada_y_salida.ipynb          # Notebook version of Guide 07
+│   └── 08_modulos_y_librerias.ipynb       # Notebook version of Guide 08
+│
 └── recursos/                          # Reference and setup materials
     ├── como_instalar_python.md        # Replit, Google Colab, VS Code, local install
     ├── glosario.md                    # Key terms explained in Spanish
@@ -58,6 +68,7 @@ TechnovationGirlsWebApps/
 
 ### Publication Status
 - **Nivel Basico (01–08):** Complete and published
+- **Notebooks (01–08):** Complete — interactive Jupyter Notebook versions of Nivel Basico
 - **Nivel Intermedio (09–14):** Planned — guides being developed progressively
 - **Nivel Avanzado (15–19):** Planned — guides being developed progressively
 - **recursos/:** Planned — reference files to be added alongside level guides
@@ -188,6 +199,7 @@ Fix typo in condicionales examples
 3. Add a link to the new guide in `README.md` under the correct level section ("Nivel Basico", "Nivel Intermedio", or "Nivel Avanzado")
 4. Update navigation links in the previous guide to point to the new one
 5. For Nivel Intermedio and Avanzado guides, note any new library requirements at the top of the guide
+6. If a corresponding notebook exists in `notebooks/`, update it to match the guide changes
 
 ### When Adding to `recursos/`
 1. Create the file in `recursos/` with a descriptive name: `como_instalar_python.md`
@@ -199,6 +211,28 @@ Fix typo in condicionales examples
 - Keep all code examples valid Python 3
 - Do not remove exercise difficulty tiers
 - For Nivel Intermedio/Avanzado guides, verify that prerequisite guides are clearly referenced
+- If the guide has a corresponding notebook in `notebooks/`, keep them in sync
+
+### When Editing or Adding Notebooks
+The `notebooks/` directory contains interactive Jupyter Notebook (`.ipynb`) versions of the Nivel Basico guides. Notebooks coexist with the original Markdown guides — both must be kept in sync.
+
+Each notebook follows this internal structure:
+1. **Header cell** — Title with emoji, level badge, usage instructions
+2. **Concept sections** — Original guide content in Markdown cells
+3. **Executable code cells** — Every Python example as a runnable cell
+4. **"✏️ Prueba tú misma" cells** — Empty code cells for student experimentation
+5. **Original exercise** — The exercise from the Markdown guide with an empty code cell
+6. **"🎯 Ejercicios adicionales" section** — 3 additional exercises at Básico, Intermedio, and Avanzado difficulty levels, each with an empty code cell
+7. **Summary table** — Concepts learned (Markdown cell)
+8. **Navigation links** — ⬅️/➡️ links to previous/next `.ipynb` notebook
+
+When editing notebooks:
+- Notebooks are JSON files (`.ipynb`). Each cell has `cell_type` (`markdown` or `code`), `metadata`, and `source` (list of strings with `\n`)
+- Navigation links between notebooks use `.ipynb` extension (not `.md`)
+- Do not include solution cells — exercises are left empty for students
+- Python code cells should be executable top-to-bottom when run in sequence
+- For file I/O exercises (Guide 07), include a cleanup cell at the end to delete temporary files
+- Notebook 08 ends with a congratulations message instead of a "next" link
 
 ---
 
@@ -242,7 +276,8 @@ Students are directed to use one of the following, depending on their level:
 |------|----------|-------|
 | **Replit** (replit.com) | Browser-based, no installation, supports FastAPI | All levels |
 | **Google Colab** | Quick Python experiments, notebook style | Nivel Basico only |
-| **VS Code** with Python extension | Full local development | All levels |
+| **Jupyter Notebook** | Run `.ipynb` notebooks locally | Nivel Basico (notebooks/) |
+| **VS Code** with Python extension | Full local development, supports `.ipynb` | All levels |
 | **Python 3** (python.org) | Local installation base | Nivel Intermedio & Avanzado |
 
 For Nivel Avanzado (FastAPI), students need either a local Python install or Replit — Google Colab cannot run a persistent web server.
@@ -276,6 +311,7 @@ For Nivel Avanzado (FastAPI), students need either a local Python install or Rep
 - **Affiliation:** Technovation Girls program
 - **Status:** Active
   - Phase 1 (Nivel Basico, Guides 01–08): Complete
+  - Notebooks (Nivel Basico, 01–08): Complete
   - Phase 2 (Nivel Intermedio, Guides 09–14): In progress
   - Phase 3 (Nivel Avanzado, Guides 15–19): Planned
   - recursos/ section: Planned alongside Phase 2–3

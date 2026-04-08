@@ -81,6 +81,24 @@ ejercicios/
 +-- nivel_basico_proyecto_final.py     # Codigo de arranque con TODOs para completar
 ```
 
+### Notebooks interactivos — Nivel Basico
+
+Versiones interactivas de las guias del Nivel Basico en formato Jupyter Notebook (`.ipynb`). Incluyen celdas ejecutables, ejercicios guiados en 3 niveles de dificultad y espacios para practicar.
+
+```
+notebooks/
++-- 01_introduccion_a_python.ipynb
++-- 02_variables_y_tipos_de_datos.ipynb
++-- 03_condicionales.ipynb
++-- 04_ciclos.ipynb
++-- 05_funciones.ipynb
++-- 06_listas_y_diccionarios.ipynb
++-- 07_entrada_y_salida.ipynb
++-- 08_modulos_y_librerias.ipynb
+```
+
+> Puedes abrir estos notebooks en **Google Colab**, **Jupyter** o **VS Code** y ejecutar el codigo directamente.
+
 ### Recursos y apoyo
 
 ```
